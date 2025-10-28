@@ -18,3 +18,4 @@ venv/
 node_modules/
 dist/
 build/
+git remote add origin https://github.com/Tahakcy/fullstack-todoapp.git
