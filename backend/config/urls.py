@@ -1,22 +1,13 @@
-# backend/urls.py
-from django.contrib import admin
 from django.urls import path
-from todos.views import (
-    register, login, logout_view,
-    userInfo, changePassword,
-    todoList,
-)
+from todos import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-
-    path('api/register/', register),
-    path('api/login/', login),
-    path('api/logout/', logout_view),
-
-    path('api/users/<uuid:id>/', userInfo),
-    path('api/change-password/', changePassword),
-
-    path('api/todos/', todoList), 
-    path('api/todos/<uuid:id>/', todoList),      
+    path('api/register/', views.register),
+    path('api/login/', views.login),
+    path('api/logout/', views.logout_view),
+    path('api/users/', views.userInfo),
+    path('api/users/<uuid:id>/', views.userInfo),
+    path('api/change-password/', views.changePassword),
+    path('api/todos/', views.todoList),
+    path('api/todos/<uuid:id>/', views.todo_detail),
 ]
